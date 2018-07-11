@@ -10,10 +10,8 @@
    organisers
 
 ### Windows
-1. Download and extract the planar library at
-`https://bitbucket.org/caseman/planar/get/9f8615991edd.zip`
-2. Go into the extracted folder and run `python setup.py build_py install --skip-build`
-3. `pip install "requests>=2.4.2"`
+1. Go into `dependencies/planar` and run `python setup.py build_py install --skip-build`
+2. `pip install "requests>=2.4.2"`
 4. In the Aigar.io project folder, rename `player.default.json` to `player.json` and
    replace `player_id`, `player_secret` and `api_url` by the values that were given to
    you by the organisers
