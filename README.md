@@ -5,7 +5,6 @@ more than 30 teams competing to accumulate as much points as possible during the
 day. The winning team will be the one with the highest score at the end.
 
 During the competition, there will be many rounds. A game will last 10 minutes. 
-The organisers have the ability to change the duration of the rounds if necessary.
 
 **Note**
 The web visualizer doesn't fetch game states at the same rate as the game
@@ -16,6 +15,10 @@ far. AI clients don't interpolate states.
 **Note 2**
 This documentation contains formulas. For most AIs, it will be safe to ignore
 them.
+
+**Note 3**
+In case of an unforeseen extreme imbalance in the game, the organizers reserve the right 
+to change the necessary variables at any point during the competition.
 
 # The Game
 Every team controls cells on a map containing every other team. The map also
