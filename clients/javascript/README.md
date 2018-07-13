@@ -85,6 +85,8 @@ To collect a resource, a cell must collide with it.
 To eat an enemy cell, a cell must almost completely overlap its enemy and be
 10% bigger than it.
 
+There is a maximum of 10 cells per player at any given time during a game.
+
 #### Attributes
 - `id`: Identifier of the cell
 
@@ -120,7 +122,9 @@ To eat an enemy cell, a cell must almost completely overlap its enemy and be
 
 - `trade(mass)`: Trades a given amount of the cell's mass to gain a small gain
                  in the player's score (competition points) with a ratio of 
-                 2:1.
+                 2:1. (trading 20 mass will give 10 points).
+                 This call freezes the cell for 5 seconds. After that, if the
+                 cell is still alive, the trade will complete.
                  If the given quantity is too large for the cell's mass, the
                  trade will only be based on how much the cell can afford.
 
@@ -147,17 +151,19 @@ There are three available resource types:
 
 - `gold`: List of positions (`Vec2` objects) for *gold* resources
 
+- `allResources`: List of positions (`Vec2` objects) for all resources (regular, silver and gold)
+
 ### Virus
 Dangerous stationary cell on the map that, when eaten, causes the eating cell
 to explode (split and lose mass). It will remove 40% of the cell's mass and force
-it to split once and its `children` to split once.
+it to split once and its `children` to split once (resulting in 4 sub-cells).
 
 A `Cell` will explode if it mostly overlaps a virus and has 10% more mass. It
 is safe to hide under a virus if the cell is smaller.
 
 #### Attributes
 - `mass`: Mass of the virus.
-          A `Cell` eating the virus will explode if it is 10% bigger than this.
+          A `Cell` eating the virus will explode if it is at least 10% bigger than this.
 
 - `position`: Position (`Vec2` object) of the virus
 

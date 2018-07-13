@@ -5,6 +5,7 @@ module.exports = class Resources {
     this.regular = regularPositions;
     this.silver = silverPositions;
     this.gold = goldPositions;
+    this.allResources = this.regular.concat(this.silver).concat(this.gold);
   }
 
   static parse(payload) {
