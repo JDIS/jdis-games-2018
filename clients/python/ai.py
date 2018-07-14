@@ -19,7 +19,7 @@ class AI:
         :param game: Game object
         """
 
-        print("Tick #{}".format(game.tick))
+        print("Tick #{}".format(game.time_left))
 
         for cell in game.me.cells:
             distance = cell.position.distance_to(cell.target)
